@@ -34,6 +34,11 @@ app.get('/formulae', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/formulae.html'));
 });
 
+app.get('/lemans', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/lemans.html'));
+});
+
+
 
 
 http.listen(80, function(){
