@@ -26,6 +26,10 @@ app.get('/formulaindy', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/formulaindy.html'));
 });
 
+app.get('/formulatruck', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/formulaitruck.html'));
+});
+
 
 
 http.listen(80, function(){
