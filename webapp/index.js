@@ -42,6 +42,9 @@ app.get('/rally', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/rally.html'));
 });
 
+app.get('/nascar', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/nascar.html'));
+});
 
 
 http.listen(80, function(){
