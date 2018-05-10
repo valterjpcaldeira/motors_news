@@ -18,6 +18,10 @@ app.get('/', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/index.html'));
 });
 
+app.get('/formula1', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/formula1.html'));
+});
+
 
 
 http.listen(80, function(){
