@@ -38,6 +38,9 @@ app.get('/lemans', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/lemans.html'));
 });
 
+app.get('/rally', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/rally.html'));
+});
 
 
 
