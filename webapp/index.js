@@ -46,6 +46,10 @@ app.get('/nascar', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/nascar.html'));
 });
 
+app.get('/wtcc', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/wtcc.html'));
+});
+
 
 http.listen(80, function(){
   console.log('listening on *:80');
