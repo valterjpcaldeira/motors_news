@@ -22,6 +22,10 @@ app.get('/formula1', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/formula1.html'));
 });
 
+app.get('/formulaindy', function (req, res, next) {
+	res.sendFile(path.join(__dirname + '/private/formulaindy.html'));
+});
+
 
 
 http.listen(80, function(){
