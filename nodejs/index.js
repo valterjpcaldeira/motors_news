@@ -6,6 +6,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require("fs");
 var request = require('request');
+var cheerio = require('cheerio');
 var numUsers = 0;
 
 //CONFIG
