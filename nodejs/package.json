@@ -9,6 +9,10 @@
   "dependencies": {
     "express": "latest",
     "morgan": "latest",
-    "serve-favicon" : "latest"
+    "serve-favicon" : "latest", 
+    "request"    : "latest", 
+    "cheerio"    : "latest",
+    "socket.io"    : "latest",
+    "fs" : "latest"
   }
 }

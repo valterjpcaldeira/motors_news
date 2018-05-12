@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var fs = require("fs");
 var numUsers = 0;
 
 //CONFIG
@@ -49,12 +50,18 @@ app.get('/nascar', function (req, res, next) {
 app.get('/wtcc', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/wtcc.html'));
 });
-/*
-app.get('/table_formula1', function(req, res){
+
+app.get('/tableformula1', function(req, res){
+
+	res.setHeader('Content-Type', 'application/json');
+
+	print("get /table_formula1");
 
     url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
 
     request(url, function(error, response, html){
+
+    	print("request")
 
         if(!error){
             var $ = cheerio.load(html);
@@ -81,15 +88,15 @@ app.get('/table_formula1', function(req, res){
 					if(index2 == 5){
 						tableList[index]['points'] = $(element2).text();
 					}
-				}
+				});
 			});
 
 			json.table = tableList;
-			res.send(json);
         }
     });
-    res.json(result);
-});*/
+    print("json")
+    res.send(JSON.stringify(json));
+});
 
 
 http.listen(80, function(){
