@@ -55,13 +55,13 @@ app.get('/tableformula1', function(req, res){
 
 	res.setHeader('Content-Type', 'application/json');
 
-	print("get /table_formula1");
+	console.log("get /table_formula1");
 
     url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
 
     request(url, function(error, response, html){
 
-    	print("request")
+    	console.log("request")
 
         if(!error){
             var $ = cheerio.load(html);
@@ -94,7 +94,7 @@ app.get('/tableformula1', function(req, res){
 			json.table = tableList;
         }
     });
-    print("json")
+    console.log("json")
     res.send(JSON.stringify(json));
 });
 
