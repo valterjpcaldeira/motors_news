@@ -1,3 +1,4 @@
 {
-    "id": "myservice"
+    "id": "myservice",
+    "cpu": 1,
 }
