@@ -95,4 +95,3 @@ app.get('/table_formula1', function(req, res){
 http.listen(80, function(){
   console.log('listening on *:80');
 });
-
