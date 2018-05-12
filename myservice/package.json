@@ -9,8 +9,6 @@
   "dependencies": {
     "express": "latest",
     "morgan": "latest",
-    "serve-favicon" : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
+    "serve-favicon" : "latest"
   }
 }
