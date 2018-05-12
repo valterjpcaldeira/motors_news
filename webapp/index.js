@@ -50,6 +50,47 @@ app.get('/wtcc', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/wtcc.html'));
 });
 
+app.get('/table_formula1', function(req, res){
+
+    url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
+
+    request(url, function(error, response, html){
+
+        if(!error){
+            var $ = cheerio.load(html);
+
+            var title, release, rating;
+            var json = { table : ""};
+            var tableList = new Array();
+
+            $('.ltable__row').each(function(index, element){
+				tableList[index] = {};
+				$(element).find('.table__cell').each(function(index2, element2){
+					if(index2 == 1){
+						tableList[index]['position'] = $(element2).text();
+					}
+					if(index2 == 2){
+						tableList[index]['name'] = $(element2).find(".medium-abbr-off").getAttribute("title");
+					}
+					if(index2 == 3){
+						tableList[index]['team'] = $(element2).text();
+					}
+					if(index2 == 4){
+						tableList[index]['wins'] = $(element2).text();
+					}
+					if(index2 == 5){
+						tableList[index]['points'] = $(element2).text();
+					}
+				}
+			});
+
+			json.table = tableList;
+			res.send(json);
+        }
+    });
+    res.json(result);
+});
+
 
 http.listen(80, function(){
   console.log('listening on *:80');
