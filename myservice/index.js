@@ -49,7 +49,7 @@ app.get('/nascar', function (req, res, next) {
 app.get('/wtcc', function (req, res, next) {
 	res.sendFile(path.join(__dirname + '/private/wtcc.html'));
 });
-
+/*
 app.get('/table_formula1', function(req, res){
 
     url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
@@ -89,10 +89,9 @@ app.get('/table_formula1', function(req, res){
         }
     });
     res.json(result);
-});
+});*/
 
 
 http.listen(80, function(){
   console.log('listening on *:80');
 });
-
