@@ -5,6 +5,8 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var fs = require("fs");
+var request = require('request');
+var cheerio = require('cheerio');
 var numUsers = 0;
 
 //CONFIG
@@ -55,13 +57,13 @@ app.get('/tableformula1', function(req, res){
 
 	res.setHeader('Content-Type', 'application/json');
 
-	print("get /table_formula1");
+	console.log("get /table_formula1");
 
     url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
 
     request(url, function(error, response, html){
 
-    	print("request")
+    	console.log("request")
 
         if(!error){
             var $ = cheerio.load(html);
@@ -94,7 +96,7 @@ app.get('/tableformula1', function(req, res){
 			json.table = tableList;
         }
     });
-    print("json")
+    console.log("json")
     res.send(JSON.stringify(json));
 });
 
