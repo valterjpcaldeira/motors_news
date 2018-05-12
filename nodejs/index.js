@@ -92,10 +92,10 @@ app.get('/tableformula1', function(req, res){
 					}
 				});
 			});
-
+            console.log(tableList);
 			json.table = tableList;
         }
-        console.log("json")
+        console.log(json)
     	res.send(JSON.stringify(json));
     });
 });
