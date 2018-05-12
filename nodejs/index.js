@@ -95,9 +95,9 @@ app.get('/tableformula1', function(req, res){
 
 			json.table = tableList;
         }
+        console.log("json")
+    	res.send(JSON.stringify(json));
     });
-    console.log("json")
-    res.send(JSON.stringify(json));
 });
 
 
