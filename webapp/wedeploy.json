@@ -1,0 +1,4 @@
+{
+    "id": "nodejs",
+    "image": "wedeploy/nodejs:0.0.1"
+}
