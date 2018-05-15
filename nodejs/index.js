@@ -57,22 +57,19 @@ app.get('/tableformula1', function(req, res){
 
 	res.setHeader('Content-Type', 'application/json');
 
-	console.log("get /table_formula1");
-
     url = 'https://www.bbc.com/sport/formula1/drivers-world-championship/standings';
 
     request(url, function(error, response, html){
-
-    	console.log("request")
 
         if(!error){
             var $ = cheerio.load(html);
 
             var title, release, rating;
-            var json = { table : ""};
+            var json = { table : "test"};
             var tableList = new Array();
 
             $('.ltable__row').each(function(index, element){
+            	console.log(element);
 				tableList[index] = {};
 				$(element).find('.table__cell').each(function(index2, element2){
 					if(index2 == 1){
